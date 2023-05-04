@@ -1,0 +1,18 @@
+* significa que esta hecho
+*conexion con la base de datos ! 
+*Crear, eliminar, modificar
+*lista de pokemones 
+*falta usuario que da de alta a los pokemones 
+*Usuario admin 
+* buscador hecho
+*Tailwind CSS es lo que estamos usando para lo visual y responsive 
+
+que el buscador muestre lo que le pidamos correctamente
+- Si se busca un pokemon existente, mostrar sólo ese.
+- Si se busca un pokemon inexistente, informar "pokemon no encontrado" y - mostrar la lista
+de todos ellos.
+- Si no se busca nada, mostrar la lista de todos ellos
+- Al ingresar al pokemon buscado, mostrar todos sus datos en una página completa
+-y falta lo visual de la pagina
+-falta la pagina del pokemon solo 
+

@@ -1,0 +1,81 @@
+/* Estilos CSS para dar formato a la página */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.resultado {
+    background-color: lightgray;
+    padding: 10px;
+    display: none;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    margin-top: 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+
+}
+
+.menu {
+    list-style-type: none;
+    margin: 40px;
+    padding: 0;
+    display: flex;
+    background-color: #f8f8f8;
+}
+
+.menu li {
+    margin-right: 10px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu li a:hover {
+    background-color: #ddd;
+}
+
+
+.contenedor-iframe {
+    width: 100%;
+    height: 500px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+iframe{
+    width: 100%;
+    height: 500px;
+}
+
+.contenedor-imagen{
+    width: 100%;
+    height: 500px;
+
+}
+
+
+
+
