@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>POKEDEX</title>
@@ -9,25 +9,35 @@
 </head>
 <body>
 
-<div class="container">
+<div class="bg-gray-800 text-white py-4 md:py-8 px-4 md:px-8 flex flex-row items-center justify-between">
+    <div class="flex items-center w-full md:w-1/3 justify-left">
+        <img src="img/pokedex.png">
+    </div>
 
-    <h1>POKEDEX</h1>
+    <div class="w-full md:w-1/3 ">
+        <h1 class="text-lg font-bold text-center">
+            POKEDEX
+        </h1>
+    </div>
+    <div class="flex items-center w-full md:w-1/3 justify-end">
+        <form action="functions.php" method="POST" enctype="multipart/form-data" class="flex flex-wrap">
 
-    <form action="functions.php" method="POST" enctype="multipart/form-data">
 
-        <div class="flex items-center justify-center">
-            <input type="text"
-                   class="border border-solid border-[#12121230] shadow-sm hover:shadow-md duration-200 w-80 my-2 p-3 focus:outline-none"
-                   name="usuario" placeholder="Usuario" autocomplete="off"/>
-            <input type="password"
-                   class="border border-solid border-[#12121230] shadow-sm hover:shadow-md duration-200 w-80 my-2 p-3 focus:outline-none"
-                   name="contrasena" placeholder="Contraseña" autocomplete="off"/>
-            <button type="submit"
-                    class="border border-solid border-[#12121230] focus:shadow-md hover:bg-[#333652] hover:text-white duration-200 w-80 p-3 my-2">
-                Iniciar sesión
-            </button>
-        </div>
-    </form>
+                <input type="text"
+                       class="w-full md:w-1/3 p-4 border border-gray-700 rounded px-1 py-2 bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                       name="usuario" placeholder="Usuario" autocomplete="off"/>
+
+                <input type="password"
+                       class="w-full md:w-1/3 p-4 border border-gray-700 rounded px-1 py-2 bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                       name="contrasena" placeholder="Contraseña" autocomplete="off"/>
+
+                <button type="submit"
+                        class="w-full md:w-1/3 p-4 bg-blue-500 hover:bg-blue-700 rounded text-white px-4 py-2">
+                    Ingresar
+                </button>
+
+        </form>
+    </div>
 
 
 </div>
