@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,26 +19,19 @@
         </h1>
     </div>
     <div class="flex items-center w-full md:w-1/3 justify-end">
-        <form action="functions.php" method="POST" enctype="multipart/form-data" class="flex flex-wrap">
-
-
+        <form action="iniciar-sesion.php" method="POST" enctype="multipart/form-data" class="flex flex-wrap">
                 <input type="text"
                        class="w-full md:w-1/3 p-4 border border-gray-700 rounded px-1 py-2 bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
                        name="usuario" placeholder="Usuario" autocomplete="off"/>
-
                 <input type="password"
                        class="w-full md:w-1/3 p-4 border border-gray-700 rounded px-1 py-2 bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
                        name="contrasena" placeholder="Contraseña" autocomplete="off"/>
-
                 <button type="submit"
                         class="w-full md:w-1/3 p-4 bg-blue-500 hover:bg-blue-700 rounded text-white px-4 py-2">
                     Ingresar
                 </button>
-
         </form>
     </div>
-
-
 </div>
 
 </body>

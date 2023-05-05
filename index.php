@@ -1,6 +1,5 @@
 <?php
-include_once ('functions.php');
-include_once ('header.php');
+include_once ('db.php');
 
 $conexion = conexion();
 
@@ -34,7 +33,9 @@ if(!empty($_GET['message'])){
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-
+<?php
+include_once ('header.php');
+?>
 <div  class="flex items-center justify-center">
 
     <form action="busqueda.php" method="get" >
