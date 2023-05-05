@@ -31,6 +31,7 @@ if(!empty($_GET['message'])){
     <meta charset="UTF-8">
     <title>POKEDEX</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
@@ -39,7 +40,7 @@ if(!empty($_GET['message'])){
     <form action="busqueda.php" method="get" >
 
         <input type="text" name="buscador"
-               class="border border-solid border-[#12121230] shadow-sm hover:shadow-md duration-200 w-80 my-2 p-3 focus:outline-none"
+               class="w-full p-4 border rounded px-1 py-2 focus:outline-none focus:ring-2 text-white"
         >
 
         <button type="submit" >buscar</button>
