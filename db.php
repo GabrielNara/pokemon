@@ -2,7 +2,7 @@
 
 function conexion(): PDO
 {
-    $host = "localhost:3306";
+    $host = "localhost:3307";
     $db = "pokemon";
     $usuario = "root";
     $contrasenia = "";

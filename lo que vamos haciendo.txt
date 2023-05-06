@@ -16,3 +16,4 @@ de todos ellos.
 -y falta lo visual de la pagina
 -falta la pagina del pokemon solo 
 
+-probando commit
