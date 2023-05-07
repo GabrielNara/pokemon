@@ -77,6 +77,11 @@ iframe{
 }
 
 
-
-
+@font-face {
+    font-family: 'pokemon-hollow';
+    src: url('../font/Pokemon_Hollow.ttf') format('truetype');
+}
+.custom-font {
+    font-family: 'pokemon-hollow', sans-serif;
+}
 

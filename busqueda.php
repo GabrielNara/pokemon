@@ -6,7 +6,7 @@ $conexion = conexion();
 
 $busqueda = $_GET["buscador"];
 
-$sql = $conexion->prepare("SELECT * FROM pokemones WHERE nombre LIKE '$busqueda' OR tipo LIKE '$busqueda' OR  numero LIKE '$busqueda'");
+$sql = $conexion->prepare("SELECT p.* FROM pokemones  p inner join  tipo t on p.tipo=t.id WHERE p.nombre LIKE '$busqueda' OR t.tipo LIKE '$busqueda' OR  p.numero LIKE '$busqueda'");
 $sql->execute();
 $listaPokemones = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -17,7 +17,9 @@ if(empty($listaPokemones)) {
 
     $sql = $conexion->prepare("SELECT * FROM pokemones");
     $sql->execute();
+
     $listaPokemones = $sql->fetchAll(PDO::FETCH_ASSOC);
+
 }
 ?>
 
@@ -57,12 +59,12 @@ if (!isset($_SESSION['usuario'])) {
         <tbody>
         <?php
         foreach ($listaPokemones as $pokemon) {
-            echo '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            echo '<tr onclick="window.location=\'detalle.php?id=' . $pokemon['idPokemon'] . '\'" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">';
+            echo '<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <img class="w-24" src="./img/' . $pokemon['imagen'] . '"/>
             </th>
             <td class="px-6 py-4">
-                <img src="./img/' . $pokemon['tipo'] . '"/>
+                <img src="./img/' . $pokemon['tipo'] . '.png"/>
             </td>
             <td class="px-6 py-4">' . $pokemon['numero'] . '</td>
             <td class="px-6 py-4">' . $pokemon['nombre'] . '</td>
@@ -110,12 +112,12 @@ if (!isset($_SESSION['usuario'])) {
         <tbody>
         <?php
         foreach ($listaPokemones as $pokemon) {
-            echo '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            echo '<tr onclick="window.location=\'detalle.php?id=' . $pokemon['idPokemon'] . '\'" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">';
+            echo '<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <img class="w-24" src="./img/' . $pokemon['imagen'] . '"/>
             </th>
             <td class="px-6 py-4">
-                <img src="./img/' . $pokemon['tipo'] . '"/>
+                <img src="./img/' . $pokemon['tipo'] . '.png"/>
             </td>
             <td class="px-6 py-4">' . $pokemon['numero'] . '</td>
             <td class="px-6 py-4">' . $pokemon['nombre'] . '</td>
