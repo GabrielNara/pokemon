@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>POKEDEX</title>
-    <link rel="stylesheet" href="css/estilos.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="CSS/estilos.css">
+
 </head>
 <body>
 
@@ -14,8 +15,8 @@
     </div>
 
     <div class="w-full md:w-1/3 ">
-        <h1 class="text-4xl font-bold text-center">
-            POKEDEX
+        <h1 class="text-5xl text-center custom-font">
+            Pokedex
         </h1>
     </div>
     <div class="flex items-center w-full md:w-1/3 justify-end">

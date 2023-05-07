@@ -36,29 +36,30 @@ if(!empty($_GET['message'])){
 <?php
 include_once ('header.php');
 ?>
-<div class="relative overflow-x-auto m-16">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-        <tr>
-            <th scope="col" class="px-6 py-3">
-                Imagen
-            </th>
-            <th scope="col" class="px-6 py-3">
-                Tipo
-            </th>
-            <th scope="col" class="px-6 py-3">
-                Número
-            </th>
-            <th scope="col" class="px-6 py-3">
-                Nombre
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        foreach ($listaPokemones as $pokemon) {
-            echo '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+
+    <div class="relative overflow-x-auto m-16" >
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 table">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Imagen
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Tipo
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Número
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Nombre
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($listaPokemones as $pokemon) {
+                echo '<tr onclick="window.location=\'detalle.php?id=' . $pokemon['idPokemon'] . '\'" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">';
+                echo '<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <img class="w-24" src="./img/' . $pokemon['imagen'] . '"/>
             </th>
             <td class="px-6 py-4">
@@ -66,12 +67,16 @@ include_once ('header.php');
             </td>
             <td class="px-6 py-4">' . $pokemon['numero'] . '</td>
             <td class="px-6 py-4">' . $pokemon['nombre'] . '</td>
-        </tr>';
-        }
-        ?>
-        </tbody>
-    </table>
-</div>
+        </tr>
+        ';
+            }
+
+            ?>
+            </tbody>
+        </table>
+    </div>
+
+
 </body>
 </html>
 
