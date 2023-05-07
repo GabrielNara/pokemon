@@ -1,0 +1,20 @@
+<FilesMatch ".*\.(log|ini|htaccess)$">
+    deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /pokemon/
+
+  # Redirigir a index.php si el usuario no está logeado
+    RewriteCond %{REQUEST_URI} ^/administrador\.php$
+    RewriteCond %{HTTP_COOKIE} !login=si
+    RewriteRule .* index.php [L,R=302]
+
+    # Permitir acceso a administrador.php si el usuario está logeado
+    RewriteCond %{REQUEST_URI} ^/administrador\.php$
+    RewriteCond %{HTTP_COOKIE} login=si
+    RewriteRule .* - [L]
+
+
+</IfModule>

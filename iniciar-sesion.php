@@ -12,10 +12,13 @@ if ($_POST) {
     $sql->bindParam(':contrasena', $contrasena);
     $sql->execute();
 
+    session_start();
     if ($sql->fetch()) {
-        session_start();
+
         $_SESSION['usuario'] = $usuario;
-        header('Location: administrador.php');
+        setcookie('login', 'si', time()+3600, '/pokemon');
+        header('Location: /pokemon/administrador.php');
+
         exit();
     } else {
         ?>

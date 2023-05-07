@@ -36,18 +36,17 @@ if(!empty($_GET['message'])){
 <?php
 include_once ('header.php');
 ?>
-<div  class="flex items-center justify-center">
 
-    <form action="busqueda.php" method="get" >
+<div class="w-full p-8">
+    <form action="busqueda.php" method="GET" class="flex">
 
-        <input type="text" name="buscador"
-               class="w-full p-4 border rounded px-1 py-2 focus:outline-none focus:ring-2 text-white"
-        >
+            <input type="text" name="buscador" class="w-3/4 px-4 py-2 rounded-l-lg border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Ingrese el nombre, tipo o número de pokémon">
+            <button type="submit" class="w-1/4 px-4 py-2 rounded-r-lg bg-gray-800 text-white font-bold tracking-wide hover:bg-gray-700">¿Quien es ese pokemon?</button>
 
-        <button type="submit" >buscar</button>
     </form>
-
 </div>
+
+
 <div  class="flex items-center justify-center" >
 
     <?php
