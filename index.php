@@ -36,32 +36,42 @@ if(!empty($_GET['message'])){
 <?php
 include_once ('header.php');
 ?>
-
-<div class="w-full p-8">
-    <form action="busqueda.php" method="GET" class="flex">
-
-            <input type="text" name="buscador" class="w-3/4 px-4 py-2 rounded-l-lg border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Ingrese el nombre, tipo o número de pokémon">
-            <button type="submit" class="w-1/4 px-4 py-2 rounded-r-lg bg-gray-800 text-white font-bold tracking-wide hover:bg-gray-700">¿Quien es ese pokemon?</button>
-
-    </form>
+<div class="relative overflow-x-auto m-16">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                Imagen
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Tipo
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Número
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Nombre
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($listaPokemones as $pokemon) {
+            echo '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <img class="w-24" src="./img/' . $pokemon['imagen'] . '"/>
+            </th>
+            <td class="px-6 py-4">
+                <img src="./img/' . $pokemon['tipo'] . '.png"/>
+            </td>
+            <td class="px-6 py-4">' . $pokemon['numero'] . '</td>
+            <td class="px-6 py-4">' . $pokemon['nombre'] . '</td>
+        </tr>';
+        }
+        ?>
+        </tbody>
+    </table>
 </div>
-
-
-<div  class="flex items-center justify-center" >
-
-    <?php
-    foreach ($listaPokemones as $element) {
-        echo "<a href='pokemon.php?id=" . $element['idPokemon'] ."'>" . $element['nombre'] . "</a> <br><br>";
-        echo "<a href='eliminar.php?id=" . $element['idPokemon'] ."'> x </a> <br><br>";
-        echo "<a href='formmodificar.php?id=" . $element['idPokemon'] ."'> m </a> <br><br>";
-    }
-    ?>
-</div>
-
-<div class="flex items-center justify-center" >
-    <a href="forminsertar.php"> alta pokemon</a>
-</div>
-
 </body>
 </html>
 

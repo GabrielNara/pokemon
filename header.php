@@ -34,6 +34,9 @@
     </div>
 </div>
 
-</body>
-
-</html>
+<div class="w-full p-8">
+    <form action="busqueda.php" method="GET" class="flex">
+        <input type="text" name="buscador" class="w-3/4 px-4 py-2 rounded-l-lg border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Ingrese el nombre, tipo o número de pokémon">
+        <button type="submit" class="w-1/4 px-4 py-2 rounded-r-lg bg-gray-800 text-white font-bold tracking-wide hover:bg-gray-700">¿Quién es ese pokemon?</button>
+    </form>
+</div>
