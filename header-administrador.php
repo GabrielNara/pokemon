@@ -3,11 +3,11 @@ include_once('db.php');
 
 $conexion = conexion();
 
-//if (!isset($_SESSION['usuario'])) {
-//    header('Location: index.php');
-//    exit();
-//}
-
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header('Location: /pokemon/index.php');
+    exit();
+}
 
 $sql = $conexion->prepare("SELECT usuario FROM usuarios");
 $sql->execute();
