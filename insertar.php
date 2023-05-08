@@ -1,26 +1,19 @@
 <?php
-include_once ("functions.php");
-
-if( empty($_POST["numero"]) &&
-    empty($_POST['tipo'])&&
-    empty($_POST['nombre'])&&
-    empty($_POST['descripcion'])&&
-    empty($_POST['imagen'])) {
-    redirect('index.php');
-}
+include_once ('db.php');
 
 $conexion = conexion();
 
 $numero = $_POST["numero"];
-$tipo = $_POST["tipo"] ;
+$tipo = $_POST["tipo"];
 $nombre = $_POST["nombre"] ;
 $descripcion = $_POST["descripcion"] ;
-$imagen = $_POST["imagen"] ;
 
-$sql = "INSERT INTO `pokemones` ( `numero`, `tipo`, `nombre`, `descripcion`, `imagen`)
-    VALUES('$numero','$tipo','$nombre','$descripcion','$imagen')";
+$archivoImagen = $_FILES['imagen']['tmp_name'];
 
-
+$rutaImg = 'img/' . $archivoImagen; /*defino la ruta completa del archivo*/
+$infoImg = pathinfo($rutaImg); /*obtengo toda la infromacion de la imaten*/
+$extension = strtolower($infoImg['extension']); /*obtengo la extension*/
+move_uploaded_file($archivoImagen, "./img/" .  $_FILES['imagen']['name']);
 
 $sql = $conexion->prepare("INSERT INTO pokemones ( `numero`, `tipo`, `nombre`, `descripcion`, `imagen`) 
 VALUES(:numero,:tipo,:nombre,:descripcion,:imagen) " );
@@ -28,11 +21,9 @@ $sql->bindParam(':numero', $numero);
 $sql->bindParam(':tipo', $tipo);
 $sql->bindParam(':descripcion', $descripcion);
 $sql->bindParam(':nombre', $nombre);
-$sql->bindParam(':imagen', $imagen);
+$sql->bindParam(':imagen', $_FILES['imagen']['name']);
 
 $sql->execute();
 
-
-redirect('index.php?message=alta');
-
-
+header("Location: administrador.php");
+exit();

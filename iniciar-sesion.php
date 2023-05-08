@@ -17,7 +17,7 @@ if ($_POST) {
 
         $_SESSION['usuario'] = $usuario;
         setcookie('login', 'si', time()+3600, '/pokemon');
-        header('Location: /pokemon/administrador.php');
+        header('Location: administrador.php');
 
         exit();
     } else {
