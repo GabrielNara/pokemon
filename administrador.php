@@ -32,8 +32,8 @@ $listaPokemones = $sql->fetchAll(PDO::FETCH_ASSOC);
         <tbody>
         <?php
         foreach ($listaPokemones as $pokemon) {
-            echo '<tr onclick="window.location=\'detalle.php?id=' . $pokemon['idPokemon'] . '\'" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">';
-            echo '<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            echo '<tr onclick="window.location=\'detalle.php?id=' . $pokemon['idPokemon'] . '\'" class="cursor-pointer bg-white border-b dark:bg-gray-800 dark:border-gray-700">';
+            echo '<th scope="row" class="cursor-pointer px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <img class="w-24" src="./img/' . $pokemon['imagen'] . '"/>
             </th>
             <td class="px-6 py-4">

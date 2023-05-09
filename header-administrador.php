@@ -24,20 +24,22 @@ $usuario = $sql->fetch(PDO::FETCH_ASSOC);
 </head>
 <body>
 
-<div class="bg-gray-800 text-white py-2 px-2 flex flex-row items-center justify-between">
-   <div class="flex items-center w-full md:w-1/3 justify-left">
-       <a href="administrador.php">
-           <img src="img/pokedex.png" class="w-24">
-       </a>
-   </div>
-    <div class="w-full md:w-1/3 ">
-        <a href="administrador.php">
-            <h1 class="text-5xl text-center custom-font p-6">
-                Pokedex
-            </h1>
-        </a>
+<div class="bg-gray-800 text-white p-2 md:flex md:flex-row md:items-center md:justify-between">
+    <div class="flex w-full md:w-3/5">
+       <div class="flex items-center w-1/2">
+           <a href="administrador.php">
+               <img src="img/pokedex.png" class="w-24">
+           </a>
+       </div>
+        <div class="w-1/2">
+            <a href="administrador.php">
+                <h1 class="text-5xl text-center custom-font p-6">
+                    Pokedex
+                </h1>
+            </a>
+        </div>
     </div>
-    <div class="flex items-center w-full md:w-1/3 justify-end">
+    <div class="flex items-center w-full md:w-2/5 justify-center md:justify-end">
         <p class="m-4 font-bold text-white"><?php echo $usuario["usuario"]; ?></p>
         <form action="cerrar-sesion.php" method="POST" enctype="multipart/form-data" class="flex flex-wrap">
             <button type="submit"

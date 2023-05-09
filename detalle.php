@@ -20,19 +20,24 @@ $datosPokemon = $sql->fetch(PDO::FETCH_ASSOC);
 <body>
 
 <div class="bg-gray-800 text-white py-2 px-2 flex flex-row items-center justify-between">
-
-    <div class="flex items-center w-full md:w-1/3 justify-left">
+    <?php
+    session_start();
+    if (!isset($_SESSION['usuario'])) {
+        echo '<a href="./index.php" class="flex w-3/5">';
+    } else {
+        echo '<a href="./administrador.php">';
+    }
+    ?>
+    <div class="flex items-center w-1/2">
         <img src="img/pokedex.png" class="w-24">
     </div>
 
-    <div class="w-full md:w-1/3 ">
+    <div class="w-1/2">
         <h1 class="text-5xl text-center custom-font p-6">
             Pokedex
         </h1>
     </div>
-    <div class="flex items-center w-full md:w-1/3 justify-end">
-
-    </div>
+    </a>
 </div>
 <div class="flex flex-wrap">
     <div class="w-full md:w-1/2 p-4">
