@@ -11,13 +11,17 @@
 
 <div class="bg-gray-800 text-white py-2 px-2 flex flex-row items-center justify-between">
     <div class="flex items-center w-full md:w-1/3 justify-left">
-        <img src="img/pokedex.png">
+        <a href="index.php">
+            <img src="img/pokedex.png" class="w-24">
+        </a>
     </div>
 
     <div class="w-full md:w-1/3 ">
-        <h1 class="text-5xl text-center custom-font">
-            Pokedex
-        </h1>
+        <a href="index.php">
+            <h1 class="text-5xl text-center custom-font p-6">
+                Pokedex
+            </h1>
+        </a>
     </div>
     <div class="flex items-center w-full md:w-1/3 justify-end">
         <form action="iniciar-sesion.php" method="POST" enctype="multipart/form-data" class="flex flex-wrap">
