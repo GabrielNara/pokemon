@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2023 a las 00:31:37
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Servidor: 127.0.0.1:3307
+-- Tiempo de generación: 09-05-2023 a las 20:44:00
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,21 @@ CREATE TABLE `pokemones` (
   `nombre` varchar(255) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `imagen` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pokemones`
+--
+
+INSERT INTO `pokemones` (`idPokemon`, `numero`, `tipo`, `nombre`, `descripcion`, `imagen`) VALUES
+(1, 1, 2, 'Bulbasaur', 'Bulbasaur es un Pokémon cuadrúpedo de color verde y manchas más oscuras de formas geométricas', 'Bulbasaur.webp'),
+(2, 2, 2, 'Ivysaur', 'Ivysaur posee un color azulado más vivo que su preevolución Bulbasaur. Además, sus ojos adquieren un leve tono violeta y sus pupilas se vuelven negras.', 'Ivysaur.webp'),
+(3, 3, 2, 'Venusaur', 'Su nombre es una combinación de las palabras Venus (una flor parecida a la planta que le crece desde su etapa como Bulbasaur) y saur, que viene del griego saurus, que quiere decir reptil o lagarto ', 'Venusaur.webp'),
+(4, 4, 1, 'Charmander', 'Charmander es un pequeño lagarto bípedo. Sus características de fuego son resaltadas por su color de piel anaranjado y su cola con la punta envuelta en llamas. ', 'Charmander.webp'),
+(5, 5, 1, 'Charmeleon', 'Su nombre es una contracción de las palabras inglesas char (carbonizar, quemar) y chameleon (camaleón). ', 'Charmeleon.webp'),
+(6, 6, 1, 'Charizard', 'a mayoría de los Charizard viven en el Valle Charirrífico. Es conocido que les gusta vivir en lugares altos y calientes, por lo que se encuentran en muchas ocasiones cerca de volcanes. ', 'Charizard.webp'),
+(7, 7, 3, 'Squirtle', 'Squirtle es una de las especies más difíciles de encontrar. Habita tanto aguas dulces como marinas, preferiblemente zonas bastante profundas.', 'Squirtle.webp'),
+(8, 8, 3, 'Wartortle', 'Wartortle es una tortuga de color azul índigo, con una pomposa cola, orejas con forma de aleta, y un caparazón de color café oscuro. ', 'Wartortle.webp');
 
 -- --------------------------------------------------------
 
@@ -45,7 +59,7 @@ CREATE TABLE `pokemones` (
 CREATE TABLE `tipo` (
   `id` int(11) NOT NULL,
   `tipo` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tipo`
@@ -80,7 +94,7 @@ INSERT INTO `tipo` (`id`, `tipo`) VALUES
 CREATE TABLE `usuarios` (
   `usuario` varchar(255) NOT NULL,
   `contrasena` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -100,12 +114,6 @@ ALTER TABLE `pokemones`
   ADD PRIMARY KEY (`idPokemon`);
 
 --
--- Indices de la tabla `tipo`
---
-ALTER TABLE `tipo`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -113,13 +121,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `pokemones`
 --
 ALTER TABLE `pokemones`
-  MODIFY `idPokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
---
--- AUTO_INCREMENT de la tabla `tipo`
---
-ALTER TABLE `tipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idPokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
