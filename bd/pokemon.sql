@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 09-05-2023 a las 20:44:00
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 10-05-2023 a las 01:13:20
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `pokemones` (
   `nombre` varchar(255) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `imagen` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pokemones`
@@ -48,7 +48,8 @@ INSERT INTO `pokemones` (`idPokemon`, `numero`, `tipo`, `nombre`, `descripcion`,
 (5, 5, 1, 'Charmeleon', 'Su nombre es una contracción de las palabras inglesas char (carbonizar, quemar) y chameleon (camaleón). ', 'Charmeleon.webp'),
 (6, 6, 1, 'Charizard', 'a mayoría de los Charizard viven en el Valle Charirrífico. Es conocido que les gusta vivir en lugares altos y calientes, por lo que se encuentran en muchas ocasiones cerca de volcanes. ', 'Charizard.webp'),
 (7, 7, 3, 'Squirtle', 'Squirtle es una de las especies más difíciles de encontrar. Habita tanto aguas dulces como marinas, preferiblemente zonas bastante profundas.', 'Squirtle.webp'),
-(8, 8, 3, 'Wartortle', 'Wartortle es una tortuga de color azul índigo, con una pomposa cola, orejas con forma de aleta, y un caparazón de color café oscuro. ', 'Wartortle.webp');
+(8, 8, 3, 'Wartortle', 'Wartortle es una tortuga de color azul índigo, con una pomposa cola, orejas con forma de aleta, y un caparazón de color café oscuro. ', 'Wartortle.webp'),
+(10, 9, 3, 'Blastoise', 'Blastoise es una enorme tortuga bípeda, que puede extender unos poderosos cañones situados en su espalda para disparar potentes chorros de agua, con la fuerza suficiente para quebrar muros de cemento o metales delgados. Pueden disparar balas de agua con s', 'Blastoise.webp');
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,7 @@ INSERT INTO `pokemones` (`idPokemon`, `numero`, `tipo`, `nombre`, `descripcion`,
 CREATE TABLE `tipo` (
   `id` int(11) NOT NULL,
   `tipo` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipo`
@@ -94,7 +95,7 @@ INSERT INTO `tipo` (`id`, `tipo`) VALUES
 CREATE TABLE `usuarios` (
   `usuario` varchar(255) NOT NULL,
   `contrasena` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -121,7 +122,7 @@ ALTER TABLE `pokemones`
 -- AUTO_INCREMENT de la tabla `pokemones`
 --
 ALTER TABLE `pokemones`
-  MODIFY `idPokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idPokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
